@@ -1,0 +1,13 @@
+Zadanie 1
+	•	mysal> CREATE TABLE postac (idpostaci int AUTO_INCREMENT, nazwa VARCHAR(40) NOT NULL, rodzaj ENUM ('wiking, ’ptak', 'kobieta' NOT NUII, data_ur DATE, wiek INT unsigned, primary key (idpostaci));
+
+	•	INSERT INTO postac (nazwa, rodzaj, data_ur, wiek) VALUES ('Bjorn', 'wiking', '1980-05-10', 44), ('Drozd', 'ptak', '2020-03-15', 4), ('Tesciowa', 'kobieta', '1936-09-20', 87);
+
+	•	UPDATE postac SET wiek = 88 WHERE nazwa = 'Tesciowa';
+Zad.2
+
+	•	SELECT id_postaci FROM postac WHERE nazwa = 'Bjorn';
+	•	SELECT id_postaci FROM postac WHERE nazwa = 'Tesciowa';
+
+
+￼
