@@ -1,0 +1,12 @@
+SELECT AVG(waga) srednia_waga_wikingow from kreatura;
+	SELECT AVG(waga) AS srednia_waga, COUNT(*) AS liczba_kreatur from kreatury GROUP NY rodzaj;
+		SELECT rodzaj, AVG(YEAR(CURDATE()) - YEAR(dataUr)) AS sredni_wiek FROM kreatura GROUP BY rodzaj;
+SELECT rodzaj, SUM(waga) AS suma_wag FROM zasobb GROUP BY rodzaj;
+	SELECT rodzaj, AVG(waga) AS srednia_waga FROM zasobb GROUP BY rodzaj  HAVING COUNT(*) >=4 AND AVG(waga) > 10;
+		SELECT rodzaj, COUNT(DISTINCT nazwa) AS liczba_nazwy FROM zasobb GROUP BY rodzaj HAVING COUNT(*) > 1;
+SELECT k.nazwa, SUM(z.ilosc) AS ilosc_zasobow FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury AND z.idZasobu GROUP BY k.nazwa;
+ 	SELECT k.nazwa, z.nazwa FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury = e.idKreatury AND e.idzasobu = z.idzasobu;
+
+
+
+
