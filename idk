@@ -1,1 +1,1 @@
-SELECT k1.nazwa, k2.nazwa FROM kreatura k1, kreatura k2 WHERE ABS(k1.idKreatury - k2.idKreatury) = 5;
+SELECT kreatura.nazwa FROM kreatura LEFT JOIN ekwipunek ON kreatura.idKreatury = ekwipunek.idKreatury WHERE ekwipunek.idKreatury IS NULL;
