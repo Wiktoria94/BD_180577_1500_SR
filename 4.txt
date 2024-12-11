@@ -7,7 +7,7 @@
 3) 1.SELECT k.nazwa, SUM(z.ilosc) AS ilosc_zasobow FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury AND z.idZasobu GROUP BY k.nazwa;
   2.SELECT k.nazwa, z.nazwa FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury = e.idKreatury AND e.idzasobu = z.idzasobu;
   3.SELECT kreatura.nazwa FROM kreatura LEFT JOIN ekwipunek ON kreatura.idKreatury = ekwipunek.idKreatury WHERE ekwipunek.idKreatury IS NULL;
-4)!1.SELECT nazwa FROM kreatura NATURAL JOIN ekwipunek WHERE rodzaj = 'wiking' AND YEAR(dataUR) BETWEEN 1670 AND 1679;
+4) 1.SELECT k.nazwa,z.nazwa FROM kreatura k, zasobb z NATURAL JOIN ekwipunek WHERE k.rodzaj = 'wiking' AND YEAR(dataUr) BETWEEN 1670 AND 1679;
   !2.SELECT nazwa FROM kreatura JOIN ekwipunek ON Kreatura.idKreatury = ekwipunek.idKreatury WHERE nazwa = 'jedzenie' ORDER BY dataUr DESC LIMIT 5;
   3.SELECT k1.nazwa, k2.nazwa FROM kreatura k1, kreatura k2 WHERE ABS(k1.idKreatury - k2.idKreatury) = 5;
 5) 1.
