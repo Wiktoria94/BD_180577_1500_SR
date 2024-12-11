@@ -1,3 +1,1 @@
-SELECT Kreatury.nazwa, Kreatury2.nazwa
-FROM Kreatury, Kreatury AS Kreatury2
-WHERE ABS(Kreatury.idKreatury - Kreatury2.idKreatury) = 5;
+SELECT Kreatura.nazwa, Kreatura2.nazwa FROM Kreatury, Kreatura AS Kreatura2 WHERE ABS(Kreatura.idKreatury - Kreatura2.idKreatury) = 5;
