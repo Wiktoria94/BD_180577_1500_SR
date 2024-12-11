@@ -1,1 +1,1 @@
-SELECT kreatura.nazwa FROM kreatura LEFT JOIN ekwipunek ON kreatura.idKreatury = ekwipunek.idKreatury WHERE ekwipunek.idKreatury IS NULL;
+2.SELECT kreatura.nazwa AS kreatura_nazwa, GROUP_CONCAT(ekwipunek.zasobb) AS zasoby FROM kreatura LEFT JOIN ekwipunek ON kreatura.idKreatury = ekwipunek.idKreatury GROUP BY kreatura.idKreatury;
