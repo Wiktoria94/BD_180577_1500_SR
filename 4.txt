@@ -1,12 +1,12 @@
-SELECT AVG(waga) srednia_waga_wikingow from kreatura;
-	SELECT AVG(waga) AS srednia_waga, COUNT(*) AS liczba_kreatur from kreatury GROUP NY rodzaj;
-		SELECT rodzaj, AVG(YEAR(CURDATE()) - YEAR(dataUr)) AS sredni_wiek FROM kreatura GROUP BY rodzaj;
-SELECT rodzaj, SUM(waga) AS suma_wag FROM zasobb GROUP BY rodzaj;
-	SELECT rodzaj, AVG(waga) AS srednia_waga FROM zasobb GROUP BY rodzaj  HAVING COUNT(*) >=4 AND AVG(waga) > 10;
-		SELECT rodzaj, COUNT(DISTINCT nazwa) AS liczba_nazwy FROM zasobb GROUP BY rodzaj HAVING COUNT(*) > 1;
-SELECT k.nazwa, SUM(z.ilosc) AS ilosc_zasobow FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury AND z.idZasobu GROUP BY k.nazwa;
- 	SELECT k.nazwa, z.nazwa FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury = e.idKreatury AND e.idzasobu = z.idzasobu;
-
-
-
+1.SELECT AVG(waga) srednia_waga_wikingow from kreatura;
+SELECT AVG(waga) AS srednia_waga, COUNT(*) AS liczba_kreatur from kreatury GROUP NY rodzaj;
+SELECT rodzaj, AVG(YEAR(CURDATE()) - YEAR(dataUr)) AS sredni_wiek FROM kreatura GROUP BY rodzaj;
+2.SELECT rodzaj, SUM(waga) AS suma_wag FROM zasobb GROUP BY rodzaj;
+SELECT rodzaj, AVG(waga) AS srednia_waga FROM zasobb GROUP BY rodzaj  HAVING COUNT(*) >=4 AND AVG(waga) > 10;
+SELECT rodzaj, COUNT(DISTINCT nazwa) AS liczba_nazwy FROM zasobb GROUP BY rodzaj HAVING COUNT(*) > 1;
+3.SELECT k.nazwa, SUM(z.ilosc) AS ilosc_zasobow FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury AND z.idZasobu GROUP BY k.nazwa;
+SELECT k.nazwa, z.nazwa FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury = e.idKreatury AND e.idzasobu = z.idzasobu;
+SELECT  SELECT k.nazwa AS nazwa_kreatury FROM kreatura k LEFT JOIN ekwipunek e ON k.idKreatury = e.idKreatury  WHERE e.idKreatury IS NULL;
+4. SELECT nazwa FROM kreatura NATURAL JOIN ekwipunek WHERE rodzaj = 'wiking' AND YEAR(dataUR) BETWEEN 1670 AND 1679;
+SELECT nazwa FROM kreatura JOIN ekwipunek ON Kreatura.idKreatury = ekwipunek.idKreatury WHERE nazwa = 'jedzenie' ORDER BY dataUr DESC LIMIT 5
 
