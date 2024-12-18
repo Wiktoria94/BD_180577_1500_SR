@@ -1,1 +1,5 @@
-SELECT kreatura.nazwa, zasobb.nazwaZasobu FROM kreatura NATURAL JOIN ekwipunek NATURAL JOIN zasobb WHERE YEAR(kreatura.dataUrodzenia) BETWEEN 1670 AND 1679;
+SELECT 
+    typ,
+    MIN(nazwa) AS najstarsza_kreatura,
+    MIN(dataUrodzenia) AS najstarsza_data,
+    MAX(nazwa) AS najmłodsza_kreatura,MAX(dataUrodzenia) AS najmłodsza_data FROM Kreatury GROUP BY typ;
