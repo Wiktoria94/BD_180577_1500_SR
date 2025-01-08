@@ -1,5 +1,7 @@
-SELECT 
-    typ,
-    MIN(nazwa) AS najstarsza_kreatura,
-    MIN(dataUrodzenia) AS najstarsza_data,
-    MAX(nazwa) AS najmłodsza_kreatura,MAX(dataUrodzenia) AS najmłodsza_data FROM Kreatury GROUP BY typ;
+5) 1.select k.rodzaj , avg(z.waga)as srednia_waga from kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasob z on e.idzasobu=z.idzasobu where k.rodzaj !='malpa' or 'waz' and e.ilosc<30 group by k.rodzaj;
+
+select k.nazwa, z.nazwa from kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasob z on e.idzasobu=z.idzasobu where k.rodzaj = 'wiking' and k.dataUr between "1670-01-01" and "1680-01-01";
+
+select k.nazwa from  kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasob z on e.idzasobu=z.idzasobu where z.rodzaj='jedzenie'  order by k.dataUr ASC limit 5;
+
+select k1.nazwa as nazwa1, k2.nazwa as nazwa2 from kreatura k1 join kreatura k2 on k1.idkreatury=k2.idkreatury +5;
