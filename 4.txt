@@ -1,5 +1,5 @@
 zestaw 4
-1. 1.SELECT AVG(waga) srednia_waga_wikingow from kreatura;
+1) 1.SELECT AVG(waga) srednia_waga_wikingow from kreatura;
   2.SELECT AVG(waga) AS srednia_waga, COUNT(*) AS liczba_kreatur from kreatury GROUP NY rodzaj;
   3.SELECT rodzaj, AVG(YEAR(CURDATE()) - YEAR(dataUr)) AS sredni_wiek FROM kreatura GROUP BY rodzaj;
 2) 1.SELECT rodzaj, SUM(waga) AS suma_wag FROM zasobb GROUP BY rodzaj;
@@ -8,7 +8,11 @@ zestaw 4
 3) 1.SELECT k.nazwa, SUM(z.ilosc) AS ilosc_zasobow FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury AND z.idZasobu GROUP BY k.nazwa;
   2.SELECT k.nazwa, z.nazwa FROM kreatura k, ekwipunek e, zasobb z WHERE k.idKreatury = e.idKreatury AND e.idzasobu = z.idzasobu;
   3.SELECT kreatura.nazwa FROM kreatura LEFT JOIN ekwipunek ON kreatura.idKreatury = ekwipunek.idKreatury WHERE ekwipunek.idKreatury IS NULL;
-4) 1.SELECT k.nazwa,z.nazwa FROM kreatura k INNER JOIN ekwipunek e ON k.idKreatury = e.idKreatury INNER JOIN zasobb z ON e.idZasobu= z.idZasobu WHERE k.rodzaj = 'wiking' AND  k.dataUr BETWEEN "1670-01-01" AND "1679-12-31";
- 
-  3.SELECT k1.nazwa, k2.nazwa FROM kreatura k1, kreatura k2 WHERE ABS(k1.idKreatury - k2.idKreatury) = 5;
-5) 1.select k.rodzaj , avg(z.waga)as srednia_waga from kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasob z on e.idzasobu=z.idzasobu where k.rodzaj !='malpa' or 'waz' and e.ilosc<30 group by k.rodzaj;
+4) 1.select k.nazwa, z.nazwa from kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasob z on e.idzasobu=z.idzasobu where k.rodzaj = 'wiking' and k.dataUr between "1670-01-01" and "1680-01-01";
+  2.select k.nazwa from  kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasob z on e.idzasobu=z.idzasobu where z.rodzaj='jedzenie'  order by k.dataUr ASC limit 5;
+  3.select k1.nazwa as nazwa1, k2.nazwa as nazwa2 from kreatura k1 join kreatura k2 on k1.idkreatury=k2.idkreatury +5;
+5) 1.select k.rodzaj , avg(z.waga)as srednia_waga from kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasobb z on e.idzasobu=z.idzasobu where k.rodzaj !='malpa' or 'waz' and e.ilosc<30 group by k.rodzaj;
+2.
+3.
+zestaw 5
+1) 1.
