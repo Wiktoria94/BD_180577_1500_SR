@@ -1,3 +1,4 @@
+zestaw 4
 1. 1.SELECT AVG(waga) srednia_waga_wikingow from kreatura;
   2.SELECT AVG(waga) AS srednia_waga, COUNT(*) AS liczba_kreatur from kreatury GROUP NY rodzaj;
   3.SELECT rodzaj, AVG(YEAR(CURDATE()) - YEAR(dataUr)) AS sredni_wiek FROM kreatura GROUP BY rodzaj;
@@ -10,4 +11,4 @@
 4) 1.SELECT k.nazwa,z.nazwa FROM kreatura k INNER JOIN ekwipunek e ON k.idKreatury = e.idKreatury INNER JOIN zasobb z ON e.idZasobu= z.idZasobu WHERE k.rodzaj = 'wiking' AND  k.dataUr BETWEEN "1670-01-01" AND "1679-12-31";
  
   3.SELECT k1.nazwa, k2.nazwa FROM kreatura k1, kreatura k2 WHERE ABS(k1.idKreatury - k2.idKreatury) = 5;
-5) 1.
+5) 1.select k.rodzaj , avg(z.waga)as srednia_waga from kreatura k inner join ekwipunek e on k.idkreatury=e.idkreatury inner join zasob z on e.idzasobu=z.idzasobu where k.rodzaj !='malpa' or 'waz' and e.ilosc<30 group by k.rodzaj;
