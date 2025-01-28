@@ -74,7 +74,7 @@ SELECT DISTINCT rodzaj FROM zasob WHERE (nazwa LIKE 'Ba%' OR nazwa LIKE '%os') O
 
 zestaw 4
 1) 1.SELECT AVG(waga) srednia_waga_wikingow from kreatura;
-  2.SELECT AVG(waga) AS srednia_waga, COUNT(*) AS liczba_kreatur from kreatury GROUP NY rodzaj;
+  2.SELECT AVG(waga) AS srednia_waga, COUNT(*) AS liczba_kreatur from kreatury GROUP BY rodzaj;
   3.SELECT rodzaj, AVG(YEAR(CURDATE()) - YEAR(dataUr)) AS sredni_wiek FROM kreatura GROUP BY rodzaj;
 2) 1.SELECT rodzaj, SUM(waga) AS suma_wag FROM zasobb GROUP BY rodzaj;
   2.SELECT rodzaj, AVG(waga) AS srednia_waga FROM zasobb GROUP BY rodzaj  HAVING COUNT(*) >=4 AND AVG(waga) > 10;
