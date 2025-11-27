@@ -1,0 +1,6 @@
+SELECT d.NAME AS nazwa_departamentu,
+       COUNT(e.`EMPLOYEE NAME`) AS liczba_pracownikow
+FROM DEPARTMENT d
+LEFT JOIN EMPLOYEE e
+       ON d.DEPARTMENT_ID = e.`DEPARTMENT ID`
+GROUP BY d.NAME;
